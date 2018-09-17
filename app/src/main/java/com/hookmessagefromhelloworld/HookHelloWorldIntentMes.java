@@ -9,12 +9,18 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
 public class HookHelloWorldIntentMes implements IXposedHookLoadPackage {
 
+    /**
+     项目参考:https://api.xposed.info/reference/packages.html
+     https://github.com/rovo89/XposedBridge/wiki/Development-tutorial
+     https://blog.csdn.net/F0ED9cZN4Ly992G/article/details/78780254
+     *
+     */
     //此项目没有入口，直接编译apk，然后安装
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam lpparam) {
 
         if("com.helloworld".equals(lpparam.packageName)){
-            Class <?> clazz = null;
+            Class <?> clazz;
             try{
                 clazz = lpparam.classLoader.loadClass("com.helloworld.MainActivity");
                 Log.i("jw", "load class:" + clazz);

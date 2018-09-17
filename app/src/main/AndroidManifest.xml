@@ -1,0 +1,23 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          android:versionCode="1"
+          android:versionName="1.0"
+          package="com.hookmessagefromhelloworld">
+
+    <application android:allowBackup="true"
+                 android:label="@string/app_name"
+                 android:icon="@mipmap/ic_launcher"
+                 android:roundIcon="@mipmap/ic_launcher_round"
+                 android:supportsRtl="true"
+                 android:theme="@style/AppTheme">
+
+        <meta-data android:name="xposedmodule"
+                   android:value="true"/>
+        <meta-data android:name="xposeddescription"
+                   android:value="hook HelloWorld项目的intent信息"/>
+        <meta-data android:name="xposedminversion"
+                   android:value="82"/>
+
+
+    </application>
+
+</manifest>
